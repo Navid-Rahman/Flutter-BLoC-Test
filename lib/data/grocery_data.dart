@@ -21,7 +21,7 @@ class GroceryData {
       'description': 'Fresh, whole milk from local dairy.',
       'price': 2.49,
       'imageUrl':
-          'https://images.immediate.co.uk/production/volatile/sites/30/2020/02/Glass-and-bottle-of-milk-fe0997a.jpg?quality=90&resize=556,505',
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Oat_milk_glass_and_bottles.jpg/640px-Oat_milk_glass_and_bottles.jpg',
     },
     {
       'id': '4',
@@ -36,7 +36,7 @@ class GroceryData {
       'description': 'Fresh, locally-raised ground beef.',
       'price': 6.99,
       'imageUrl':
-          'https://meat.tamu.edu/files/2020/06/Ground-Beef-@-Rosenthal-2.jpg',
+          'https://foodie.sysco.com/wp-content/uploads/2019/08/Ground-Beef.jpg',
     },
     {
       'id': '6',

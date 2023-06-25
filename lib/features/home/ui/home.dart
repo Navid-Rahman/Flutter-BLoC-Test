@@ -37,6 +37,12 @@ class _HomeState extends State<Home> {
             context,
             MaterialPageRoute(builder: (context) => Wishlist()),
           );
+        } else if (state is HomeProductItemCartedActionState) {
+          ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text('Item carted')));
+        } else if (state is HomeProductItemWishlistedActionState) {
+          ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text('Item wishlisted')));
         }
       },
       builder: (context, state) {
@@ -52,7 +58,7 @@ class _HomeState extends State<Home> {
             final successState = state as HomeLoadedSuccessState;
             return Scaffold(
               appBar: AppBar(
-                backgroundColor: Color(0xFF3AA6B9),
+                backgroundColor: Color(0xFF594545),
                 title: const Text('Grocery App'),
                 actions: [
                   IconButton(
@@ -77,6 +83,7 @@ class _HomeState extends State<Home> {
                   itemCount: successState.products.length,
                   itemBuilder: (context, index) {
                     return ProductTileWidget(
+                        homeBloc: homeBloc,
                         productDataModel: successState.products[index]);
                   }),
             );
@@ -89,9 +96,6 @@ class _HomeState extends State<Home> {
           default:
             return SizedBox();
         }
-        // return Scaffold(
-
-        // );
       },
     );
   }
