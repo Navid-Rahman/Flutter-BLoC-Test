@@ -11,10 +11,10 @@ class ProductTileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Color(0xFFDFD3C3),
+        color: const Color(0xFFDFD3C3),
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
           color: Colors.black,
@@ -34,24 +34,24 @@ class ProductTileWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Text(
             productDataModel.name,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
             'Description: ' + productDataModel.description,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
               fontStyle: FontStyle.italic,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Row(
@@ -59,7 +59,7 @@ class ProductTileWidget extends StatelessWidget {
             children: [
               Text(
                 "\$ " + productDataModel.price.toString(),
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                 ),
               ),
@@ -70,7 +70,7 @@ class ProductTileWidget extends StatelessWidget {
                       homeBloc.add(HomeProductWishlistButtonClickedEvent(
                           clickedProduct: productDataModel));
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.favorite_border_outlined,
                     ),
                   ),
@@ -79,7 +79,7 @@ class ProductTileWidget extends StatelessWidget {
                       homeBloc.add(HomeProductCartButtonClickedEvent(
                           clickedProduct: productDataModel));
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.shopping_bag_outlined,
                     ),
                   ),

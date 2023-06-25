@@ -30,25 +30,25 @@ class _HomeState extends State<Home> {
         if (state is HomeNavigateToCartPageActionState) {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Cart()),
+            MaterialPageRoute(builder: (context) => const Cart()),
           );
         } else if (state is HomeNavigateToWishlistPageActionState) {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Wishlist()),
+            MaterialPageRoute(builder: (context) => const Wishlist()),
           );
         } else if (state is HomeProductItemCartedActionState) {
           ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text('Item carted')));
+              .showSnackBar(const SnackBar(content: Text('Item carted')));
         } else if (state is HomeProductItemWishlistedActionState) {
           ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text('Item wishlisted')));
+              .showSnackBar(const SnackBar(content: Text('Item wishlisted')));
         }
       },
       builder: (context, state) {
         switch (state.runtimeType) {
           case HomeLoadingState:
-            return Scaffold(
+            return const Scaffold(
               body: Center(
                 child: CircularProgressIndicator(),
               ),
@@ -58,7 +58,7 @@ class _HomeState extends State<Home> {
             final successState = state as HomeLoadedSuccessState;
             return Scaffold(
               appBar: AppBar(
-                backgroundColor: Color(0xFF594545),
+                backgroundColor: const Color(0xFF594545),
                 title: const Text('Grocery App'),
                 actions: [
                   IconButton(
@@ -88,13 +88,13 @@ class _HomeState extends State<Home> {
                   }),
             );
           case HomeErrorState:
-            return Scaffold(
+            return const Scaffold(
               body: Center(
                 child: Text('Error'),
               ),
             );
           default:
-            return SizedBox();
+            return const SizedBox();
         }
       },
     );

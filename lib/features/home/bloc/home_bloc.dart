@@ -1,11 +1,12 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:meta/meta.dart';
+
 import 'package:flutter_bloc_demo/data/cart_items.dart';
 import 'package:flutter_bloc_demo/data/grocery_data.dart';
 import 'package:flutter_bloc_demo/data/wishlist_items.dart';
 import 'package:flutter_bloc_demo/features/home/models/home_product_data_model.dart';
-import 'package:meta/meta.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';
