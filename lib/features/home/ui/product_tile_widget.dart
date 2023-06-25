@@ -10,7 +10,14 @@ class ProductTileWidget extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(10),
       padding: EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          color: Colors.black,
+        ),
+      ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             height: 200,
@@ -22,8 +29,53 @@ class ProductTileWidget extends StatelessWidget {
               ),
             ),
           ),
-          Text(productDataModel.name),
-          Text(productDataModel.description),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            productDataModel.name,
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(
+            'Description: ' + productDataModel.description,
+            style: TextStyle(
+              fontSize: 16,
+              fontStyle: FontStyle.italic,
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "\$ " + productDataModel.price.toString(),
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.favorite_border_outlined,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.shopping_bag_outlined,
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
         ],
       ),
     );
